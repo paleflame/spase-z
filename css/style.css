@@ -1,0 +1,90 @@
+ul[class],
+ol[class] {
+  list-style-type: none;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: "Courier New";
+}
+
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+header.general-header {
+  padding-top: 54px;
+  height: 700px;
+  background-color: #222222;
+}
+header.general-header .general-menu {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+header.general-header .general-menu .general-menu__link {
+  color: #D4D4D4;
+  text-decoration: none;
+}
+header.general-header .general-menu .general-menu__navigation {
+  flex: 0 0 258px;
+  margin-left: 62px;
+  display: flex;
+  justify-content: space-between;
+}
+header.general-header .general-menu .general-menu__contact-links {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex: 1 0 58px;
+}
+header.general-header .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header.general-header .header-content .header-content__description {
+  width: 254px;
+  margin-top: 43px;
+  margin-left: 126px;
+}
+header.general-header .header-content .header-content__caption {
+  font-size: 14px;
+  line-height: 17px;
+  color: #D4D4D4;
+}
+header.general-header .header-content h1 {
+  font-size: 45px;
+  color: white;
+}
+header.general-header .header-content .header-content__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+  height: 50px;
+  padding: 0 22px 0 38px;
+  font-family: "Verdana";
+  margin-top: 54px;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  color: #000;
+  background: #FFCB06;
+  border-radius: 25px;
+}
+
+/*# sourceMappingURL=style.css.map */
