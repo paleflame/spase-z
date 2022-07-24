@@ -5,7 +5,6 @@
     <!-- Адаптив раз  -->
     <meta name="viewport" content="width=1200">
 
-
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/normalize.css">
@@ -62,7 +61,7 @@
 
             <div class="header-content__description">
 
-                <h1>На Луну <br> и обратно</h1>
+                <h1 class="general-header">На Луну <br> и обратно</h1>
                 <p class="header-content__caption">Космически крутой туризм.
                     Пакетные и индивидуальные туры
                     по лучшим планетам галактики.</p>
@@ -74,7 +73,7 @@
 
             </div>
 
-            <img class="header--main_image" src="img/moon-rocket%201.png" alt="moon'n'rocket">
+            <img class="header-content__image" src="img/moon-rocket%201.png" alt="moon'n'rocket">
 
 
         </div>
@@ -89,32 +88,36 @@
     <section class="advantages">
         <div class="container">
 
+            <ul class="advantages__box">
 
-            <div class="advantages-item">
-                <img src="icons/advantage-icon-1%201.svg" alt="">
-                <p class="advantages-caption">Комфортабельные
-                    ракеты отечественного
-                    производства.</p>
-            </div>
-            <div class="advantages-item">
-                <img src="icons/advantage-icon-2%201.svg" alt="">
-                <p class="advantages-caption">Вкусное и полезное
-                    космическое питание
-                    на борту</p>
-            </div>
-            <div class="advantages-item">
-                <img src="icons/advantage-icon-3%201.svg" alt="">
-                <p class="advantages-caption">Весь состав пилотов
-                    состоит из бывших
-                    космонавтов.</p>
-            </div>
-            <div class="advantages-item"><img src="icons/advantage-icon-4%201.svg" alt="">
-                <p class="advantages-caption"
-                >Экскурсии на луноходе
-                    на Море Ясности
-                    и Океан Бурь.</p>
-            </div>
-
+                <li class="advantages-item">
+                    <img class="advantages-item__image" src="icons/advantage-icon-1%201.svg" alt="Ракета">
+                    <p class="advantages-item__caption">Комфортабельные
+                        ракеты отечественного
+                        производства.</p>
+                </li>
+                <li class="advantages-item">
+                    <img class="advantages-item__image" src="icons/advantage-icon-2%201.svg"
+                         alt="Тюбик с космической едой">
+                    <p class="advantages-item__caption">Вкусное и полезное
+                        космическое питание
+                        на борту</p>
+                </li>
+                <li class="advantages-item">
+                    <img class="advantages-item__image" src="icons/advantage-icon-3%201.svg" alt="Космонавт">
+                    <p class="advantages-item__caption">Весь состав пилотов
+                        состоит из бывших
+                        космонавтов.</p>
+                </li>
+                <li class="advantages-item">
+                    <img class="advantages-item__image" src="icons/advantage-icon-4%201.svg"
+                         alt="Лунная поверхность с развивающимся флагом">
+                    <p class="advantages-item__caption"
+                    >Экскурсии на луноходе
+                        на Море Ясности
+                        и Океан Бурь.</p>
+                </li>
+            </ul>
         </div>
 
     </section>
@@ -123,61 +126,63 @@
     <section class="content">
         <div class="container">
 
-            <div class="content_wrapper">
-                <img class="map" src="img/map%201.jpg" alt="map">
+            <div class="content__wrapper">
+                <img class="map" src="img/map%201.jpg" alt="Карта лунной поверхности">
 
-                <div class="content_description">
-                    <h2>Надоело летать в отпуск за
+                <div class="content__description">
+                    <h2 class="content__header">Надоело летать в отпуск за
                         границу? Как насчет того,
                         чтобы слетать на Луну?</h2>
 
-                    <p>Устали от пакетных туров и пляжного отдыха? Полотенца
-                        и магнитики, которые вы привозите из отпуска уже
-                        не радуют ваших близких? В следующий раз привезите
-                        им настоящий лунный камень!</p>
-                    <br> <br>
-                    <p>Мы предлагаем инновационную услугу на туристическом
-                        рынке — космический туризм (пока только на Луну, сейчас
-                        решаем вопросы с визовым центром Венеры).</p>
-                    <br> <br>
-                    <p>Берите отпуск и отправляйтесь с нами в полет,
-                        он займет всего 72 часа!
-                    </p>
+                    <div class="content__paragraphs">
+                        <p class="content__paragraph">Устали от пакетных туров и пляжного
+                            отдыха? Полотенца
+                            и магнитики, которые вы привозите из отпуска уже
+                            не радуют ваших близких? В следующий раз привезите
+                            им настоящий лунный камень!</p>
 
+                        <p class="content__paragraph">Мы предлагаем инновационную услугу на туристическом
+                            рынке — космический туризм (пока только на Луну, сейчас
+                            решаем вопросы с визовым центром Венеры).</p>
+
+                        <p class="content__paragraph">Берите отпуск и отправляйтесь с нами в полет,
+                            он займет всего 72 часа!
+                        </p>
+                    </div>
                 </div>
 
 
-                <div class="content_list_wrapper">
-                    <h2 class="content_list_header">Не забудьте взять с собой:</h2>
-                    <ul class="content_list">
-                        <li class="content_list_item">
-                                <span><b>Паспорт.</b> Визовый режим пока не введен, но на границе
+                <div class="advices">
+                    <h2 class="advices__header">Не забудьте взять с собой:</h2>
+                    <ul class="advices__list">
+                        <li class="advices__item">
+                                <span class="advices__text"><b>Паспорт.</b> Визовый режим пока не введен, но на границе
                                                                 будет досмотр.
                                 </span>
                         </li>
-                        <li class="content_list_item">
-                                <span><b>Тяжелые ботинки.</b> Пригодятся вам в условиях низкой
+                        <li class="advices__item">
+                                <span class="advices__text"><b>Тяжелые ботинки.</b> Пригодятся вам в условиях низкой
                                                                 гравитации на Луне.</span>
                         </li>
-                        <li class="content_list_item">
-                             <span>   <b>Криптовалюта.</b> Рекомендуем заранее обменять немного
+                        <li class="advices__item">
+                               <span class="advices__text"><b>Криптовалюта.</b>  Рекомендуем заранее обменять немного
                                                              Лун-коинов, чтобы купить сувениры</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="content_list_wrapper">
-                    <h2 class="content_list_header">Это лучше оставить дома:</h2>
-                    <ul class="content_list">
-                        <li class="content_list_item"><span><b>Телефон.</b> В космосе не ловит ваш любимый
+                <div class="advices">
+                    <h2 class="advices__header">Это лучше оставить дома:</h2>
+                    <ul class="advices__list">
+                        <li class="advices__item"><span class="advices__text"><b>Телефон.</b> В космосе не ловит ваш любимый
                                                             оператор и нет WI-FI.</span>
                         </li>
-                        <li class="content_list_item">
-                               <span> <b>Бутерброды.</b> На борту будет питание, которое
+                        <li class="advices__item">
+                               <span class="advices__text"> <b>Бутерброды.</b> На борту будет питание, которое
                                                                не разлетится по кабине в условиях невесомости.</span>
                         </li>
-                        <li class="content_list_item">
-                                <span><b>Плавки/купальник.</b> Море Ясности и Океан Бурь
+                        <li class="advices__item">
+                                <span class="advices__text"><b>Плавки/купальник.</b> Море Ясности и Океан Бурь
                                                                 это большие кратеры. Без воды.</span>
                         </li>
                     </ul>
@@ -193,33 +198,41 @@
 
     <section class="form">
         <div class="container">
-            <div class="form-wrapper">
-                <div class="form-description">
-                    <h2>
-                        Готовы открыть <br>
+            <div class="form__wrapper">
+                <div class="form__description">
+                    <h2 class="form__header">
+                        Готовы открыть
                         для себя что-то новое?
 
                     </h2>
-                    <p>
+                    <p class="form__text">
                         Отправьте заявку, заполнив форму справа,
                         мы рассмотрим вашу кандидатуру и свяжемся
-                        с вами в течении 24 часов.
+                        с вами в течение 24 часов.
 
                     </p>
 
                 </div>
-                <form action="#" method="get">
-                    <div>
-                        <input type="text" name="fullName" placeholder="ФИО" class="long-field">
-                        <input type="text" name="contactNumber" placeholder="Контактный телефон" class="long-field">
-                        <input type="text" name="height" placeholder="Рост">
-                        <input type="text" name="weight" placeholder="Вес">
-                    </div>
+                <form class="contact-form" action="#" method="get">
+                    <fieldset class="contact-form__fields">
+                        <input type="text" name="fullName" placeholder="ФИО"
+                               class="contact-form__field contact-form__field_long">
+                        <input type="text" name="contactNumber" placeholder="Контактный телефон"
+                               class="contact-form__field contact-form__field_long">
+                        <input class="contact-form__field contact-form__field_short" type="number" name="height"
+                               placeholder="Рост">
+                        <input class="contact-form__field contact-form__field_short" type="number" name="weight"
+                               placeholder="Вес">
+                    </fieldset>
+
                     <label class="checkbox">
-                        <input type="checkbox"> Согласен на обработку персональных данных.
+                        <span class="checkbox__icon"></span>
+                        <input class="checkbox__input" type="checkbox">
+
+                        <span class="checkbox__caption">Согласен на обработку персональных данных.</span>
                     </label>
 
-                    <button class="form__button">
+                    <button class="contact-form__button">
                         ОТПРАВИТЬ <img src="icons/right-arrow-white%201.svg" alt="right_arrow">
                     </button>
 

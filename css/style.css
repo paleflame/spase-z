@@ -15,6 +15,14 @@ ol[class] {
   padding: 0;
 }
 
+section.form .form__wrapper .contact-form .contact-form__button, section.form .form__wrapper .contact-form .contact-form__fields .contact-form__field, section.form .form__wrapper .form__description .form__text, section.content .content__wrapper .advices .advices__item, section.content .content__wrapper .content__description .content__paragraphs, section.advantages .advantages-item .advantages-item__caption {
+  font-family: "Verdana";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #D4D4D4;
+}
+
 h1, h2, h3 {
   font-family: "Courier New";
 }
@@ -34,15 +42,21 @@ header.general-header .general-menu {
   display: flex;
   align-items: center;
 }
-header.general-header .general-menu .general-menu__link {
-  color: #D4D4D4;
-  text-decoration: none;
-}
 header.general-header .general-menu .general-menu__navigation {
   flex: 0 0 258px;
   margin-left: 62px;
   display: flex;
   justify-content: space-between;
+}
+header.general-header .general-menu .general-menu__navigation .general-menu__link {
+  transition-duration: 1s;
+  display: block;
+  color: #D4D4D4;
+  text-decoration: none;
+}
+header.general-header .general-menu .general-menu__navigation .general-menu__link:hover {
+  transition-duration: 1s;
+  transform: scale(1.2);
 }
 header.general-header .general-menu .general-menu__contact-links {
   display: flex;
@@ -56,21 +70,28 @@ header.general-header .header-content {
   align-items: center;
   justify-content: space-between;
 }
-header.general-header .header-content .header-content__description {
+header.general-header .header-content__image {
+  transition-duration: 2s;
+}
+header.general-header .header-content__image:hover {
+  transition-duration: 2s;
+  transform: scale(0.8) rotate(360deg);
+}
+header.general-header .header-content__description {
   width: 254px;
   margin-top: 43px;
   margin-left: 126px;
 }
-header.general-header .header-content .header-content__caption {
+header.general-header .header-content__caption {
   font-size: 14px;
   line-height: 17px;
   color: #D4D4D4;
 }
-header.general-header .header-content h1 {
+header.general-header .general-header {
   font-size: 45px;
   color: white;
 }
-header.general-header .header-content .header-content__button {
+header.general-header .header-content__button {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,6 +105,147 @@ header.general-header .header-content .header-content__button {
   text-decoration: none;
   color: #000;
   background: #FFCB06;
+  border-radius: 25px;
+}
+
+section.advantages {
+  height: 321px;
+  background: #131313;
+  padding-top: 85px;
+}
+section.advantages .advantages__box {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+section.advantages .advantages-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 157px;
+  height: 157px;
+}
+section.advantages .advantages-item .advantages-item__image {
+  width: 60px;
+}
+section.content {
+  padding: 90px 0;
+}
+section.content .content__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 346px 204px;
+  grid-column-gap: 79px;
+  grid-row-gap: 52px;
+}
+section.content .content__wrapper .content__description {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+section.content .content__wrapper .content__description .content__paragraphs {
+  color: #000000;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section.content .content__wrapper .advices {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+section.content .content__wrapper .advices .advices__list {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section.content .content__wrapper .advices .advices__item {
+  color: #000;
+}
+section.content .content__wrapper .advices .advices__item .advices__text {
+  display: block;
+  padding-left: 2em;
+}
+section.content .content__wrapper .advices .advices__item::before {
+  display: block;
+  content: "";
+  margin-top: 0.25em;
+  position: absolute;
+  border-radius: 50%;
+  height: 0.6em;
+  width: 0.6em;
+  background-color: #FECA30;
+}
+
+section.form {
+  background: #F0F0F0;
+  padding: 75px 0;
+}
+section.form .form__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+section.form .form__wrapper .form__description {
+  width: 318px;
+}
+section.form .form__wrapper .form__description .form__text {
+  margin-top: 60px;
+  color: #000;
+}
+section.form .form__wrapper .contact-form {
+  width: 440px;
+}
+section.form .form__wrapper .contact-form .contact-form__fields {
+  border: none;
+  display: grid;
+  padding: 0;
+  grid-auto-rows: 50px;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+section.form .form__wrapper .contact-form .contact-form__fields .contact-form__field {
+  border: none;
+  outline: none;
+  color: #131313;
+  padding-left: 23px;
+}
+section.form .form__wrapper .contact-form .contact-form__fields .contact-form__field_long {
+  grid-column: 1/3;
+}
+section.form .form__wrapper .contact-form .checkbox {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+  margin-top: 20px;
+}
+section.form .form__wrapper .contact-form .checkbox .checkbox__input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+section.form .form__wrapper .contact-form .checkbox .checkbox__input {
+  content: "";
+  height: 1em;
+  width: 1em;
+  background-image: url("../icons/checkbox/checkbox_unchecked.svg");
+}
+section.form .form__wrapper .contact-form .checkbox .checkbox__input:checked {
+  background-image: url("../icons/checkbox/checkbox_checked.svg");
+}
+section.form .form__wrapper .contact-form .contact-form__button {
+  margin-top: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 215px;
+  height: 50px;
+  padding: 0 25px;
+  color: #FFF;
+  background: #222222;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
 }
 
