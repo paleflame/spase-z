@@ -15,7 +15,7 @@ ol[class] {
   padding: 0;
 }
 
-section.form .form__wrapper .contact-form .contact-form__button, section.form .form__wrapper .contact-form .contact-form__fields .contact-form__field, section.form .form__wrapper .form__description .form__text, section.content .content__wrapper .advices .advices__item, section.content .content__wrapper .content__description .content__paragraphs, section.advantages .advantages-item .advantages-item__caption {
+footer.general-footer, section.schedule .schedule__wrapper .schedule-table, section.schedule .schedule__wrapper .schedule__text, section.form .form__wrapper .contact-form .contact-form__button, section.form .form__wrapper .contact-form .contact-form__fields .contact-form__field, section.form .form__wrapper .form__description .form__text, section.content .content__wrapper .advices .advices__item, section.content .content__wrapper .content__description .content__paragraphs, section.advantages .advantages__box .advantages-item .advantages-item__caption, header.general-header .header-content .header-content__description .header-content__caption {
   font-family: "Verdana";
   font-weight: 400;
   font-size: 14px;
@@ -28,19 +28,24 @@ h1, h2, h3 {
 }
 
 .container {
-  max-width: 1020px;
+  max-width: 992px;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
 header.general-header {
-  padding-top: 54px;
-  height: 700px;
+  padding: 54px 0 100px 0;
   background-color: #222222;
 }
 header.general-header .general-menu {
   height: 62px;
   display: flex;
   align-items: center;
+}
+@media (max-width: 599px) {
+  header.general-header .general-menu {
+    display: none;
+  }
 }
 header.general-header .general-menu .general-menu__navigation {
   flex: 0 0 258px;
@@ -66,32 +71,32 @@ header.general-header .general-menu .general-menu__contact-links {
   flex: 1 0 58px;
 }
 header.general-header .header-content {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 370px minmax(100px, 438px);
   justify-content: space-between;
+  gap: 90px;
 }
-header.general-header .header-content__image {
-  transition-duration: 2s;
+@media (max-width: 900px) {
+  header.general-header .header-content {
+    grid-template-columns: 1fr;
+  }
 }
-header.general-header .header-content__image:hover {
-  transition-duration: 2s;
-  transform: scale(0.8) rotate(360deg);
+header.general-header .header-content .header-content__description {
+  padding: 43px 0 0 126px;
 }
-header.general-header .header-content__description {
-  width: 254px;
-  margin-top: 43px;
-  margin-left: 126px;
+@media (max-width: 900px) {
+  header.general-header .header-content .header-content__description {
+    padding: 43px 126px 0 126px;
+  }
 }
-header.general-header .header-content__caption {
-  font-size: 14px;
-  line-height: 17px;
-  color: #D4D4D4;
-}
-header.general-header .general-header {
+header.general-header .header-content .header-content__description h1 {
   font-size: 45px;
   color: white;
 }
-header.general-header .header-content__button {
+header.general-header .header-content .header-content__description .header-content__caption {
+  margin-top: 30px;
+}
+header.general-header .header-content .header-content__description .header-content__button {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,32 +106,59 @@ header.general-header .header-content__button {
   font-family: "Verdana";
   margin-top: 54px;
   font-size: 14px;
-  line-height: 17px;
   text-decoration: none;
   color: #000;
   background: #FFCB06;
   border-radius: 25px;
 }
+header.general-header .header-content .header-content__image {
+  transition-duration: 2s;
+  max-width: 100%;
+}
+header.general-header .header-content .header-content__image:hover {
+  transition-duration: 2s;
+  transform: scale(0.8) rotate(360deg);
+}
+@media (max-width: 900px) {
+  header.general-header .header-content .header-content__image {
+    display: none;
+  }
+}
 
 section.advantages {
-  height: 321px;
   background: #131313;
-  padding-top: 85px;
+  padding: 75px 0;
 }
 section.advantages .advantages__box {
   height: 100%;
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, 157px);
   justify-content: space-between;
 }
-section.advantages .advantages-item {
+@media (max-width: 599px) {
+  section.advantages .advantages__box {
+    grid-template-columns: repeat(2, 157px);
+    justify-content: space-between;
+    grid-row-gap: 40px;
+  }
+}
+section.advantages .advantages__box .advantages-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
   width: 157px;
-  height: 157px;
 }
-section.advantages .advantages-item .advantages-item__image {
+@media (max-width: 900px) {
+  section.advantages .advantages__box .advantages-item {
+    width: 45%;
+  }
+}
+@media (max-width: 599px) {
+  section.advantages .advantages__box .advantages-item {
+    width: 130px;
+  }
+}
+section.advantages .advantages__box .advantages-item .advantages-item__image {
   width: 60px;
 }
 section.content {
@@ -135,9 +167,24 @@ section.content {
 section.content .content__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 346px 204px;
   grid-column-gap: 79px;
   grid-row-gap: 52px;
+}
+@media (max-width: 599px) {
+  section.content .content__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+section.content .content__wrapper .content__map {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+@media (max-width: 599px) {
+  section.content .content__wrapper .content__map {
+    grid-row: 2/3;
+  }
 }
 section.content .content__wrapper .content__description {
   display: flex;
@@ -150,6 +197,7 @@ section.content .content__wrapper .content__description .content__paragraphs {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px;
 }
 section.content .content__wrapper .advices {
   display: flex;
@@ -185,18 +233,37 @@ section.form {
   padding: 75px 0;
 }
 section.form .form__wrapper {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+@media (max-width: 599px) {
+  section.form .form__wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 section.form .form__wrapper .form__description {
-  width: 318px;
+  max-width: 318px;
+}
+@media (max-width: 599px) {
+  section.form .form__wrapper .form__description {
+    max-width: none;
+  }
 }
 section.form .form__wrapper .form__description .form__text {
-  margin-top: 60px;
+  margin-top: 20px;
   color: #000;
 }
 section.form .form__wrapper .contact-form {
-  width: 440px;
+  max-width: 440px;
+  min-width: 25%;
+  flex-shrink: 2;
+}
+@media (max-width: 599px) {
+  section.form .form__wrapper .contact-form {
+    max-width: none;
+  }
 }
 section.form .form__wrapper .contact-form .contact-form__fields {
   border: none;
@@ -207,6 +274,7 @@ section.form .form__wrapper .contact-form .contact-form__fields {
   gap: 8px;
 }
 section.form .form__wrapper .contact-form .contact-form__fields .contact-form__field {
+  width: 100%;
   border: none;
   outline: none;
   color: #131313;
@@ -228,8 +296,8 @@ section.form .form__wrapper .contact-form .checkbox .checkbox__input {
 }
 section.form .form__wrapper .contact-form .checkbox .checkbox__input {
   content: "";
-  height: 1em;
-  width: 1em;
+  height: 1.2em;
+  width: 1.2em;
   background-image: url("../icons/checkbox/checkbox_unchecked.svg");
 }
 section.form .form__wrapper .contact-form .checkbox .checkbox__input:checked {
@@ -247,6 +315,115 @@ section.form .form__wrapper .contact-form .contact-form__button {
   background: #222222;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
+}
+@media (max-width: 599px) {
+  section.form .form__wrapper .contact-form .contact-form__button {
+    margin-top: 36px;
+  }
+}
+
+section.schedule {
+  padding: 75px 0;
+  background: #222;
+  color: #D4D4D4;
+}
+section.schedule .schedule__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
+}
+@media (max-width: 599px) {
+  section.schedule .schedule__wrapper {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+}
+section.schedule .schedule__wrapper .schedule__header {
+  color: #FECA30;
+}
+section.schedule .schedule__wrapper .schedule__text {
+  margin-top: 40px;
+}
+section.schedule .schedule__wrapper .schedule__text .schedule__link {
+  color: #FECA30;
+}
+section.schedule .schedule__wrapper .schedule-table {
+  grid-column: 1/3;
+  margin-top: 78px;
+  width: 100%;
+  border-collapse: collapse;
+}
+@media (max-width: 599px) {
+  section.schedule .schedule__wrapper .schedule-table {
+    grid-column: 1/2;
+  }
+}
+section.schedule .schedule__wrapper .schedule-table .schedule-table__row .schedule-table__cell {
+  height: 50px;
+  width: 25%;
+  text-align: left;
+  padding-left: 17px;
+  font-weight: 700;
+}
+section.schedule .schedule__wrapper .schedule-table .schedule-table__row_header {
+  background: #111;
+}
+section.schedule .schedule__wrapper .schedule-table .schedule-table__row_regular {
+  border-bottom: 2px solid #555;
+}
+
+footer.general-footer {
+  padding: 60px 0;
+  background: #131313;
+}
+@media (max-width: 900px) {
+  footer.general-footer {
+    display: none;
+  }
+}
+footer.general-footer .footer-general__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+footer.general-footer .footer-general__wrapper .footer-general__copyright {
+  flex: 0 1 162px;
+}
+footer.general-footer .footer-general__wrapper .footer-general__copyright .footer-general__logo-box {
+  width: 134px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer.general-footer .footer-general__wrapper .footer-general__copyright .copyright {
+  margin-top: 110px;
+  color: #555555;
+}
+footer.general-footer .footer-general__wrapper .footer-general__menu {
+  padding-top: 23px;
+  flex: 0 1 700px;
+  display: flex;
+  justify-content: space-between;
+}
+footer.general-footer .footer-general__wrapper .footer-general__menu .footer-general__subheader {
+  font-family: "Verdana";
+}
+footer.general-footer .footer-general__wrapper .footer-general__menu .footer-general__subheader::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #555;
+  margin-top: 12px;
+}
+footer.general-footer .footer-general__wrapper .footer-general__menu .footer-general__submenu {
+  margin-top: 58px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+footer.general-footer .footer-general__wrapper .footer-general__menu .footer-general__submenu .footer-general__menu-item {
+  color: #888;
 }
 
 /*# sourceMappingURL=style.css.map */

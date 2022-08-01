@@ -1,4 +1,5 @@
 @import "nullstyles.scss";
+@import "adaptive.scss";
 
 * {
   box-sizing: border-box;
@@ -13,8 +14,6 @@
   font-size: 14px;
   line-height: 17px;
   color: #D4D4D4;
-
-
 }
 
 
@@ -24,15 +23,15 @@ h1, h2, h3 {
 
 
 .container {
-  max-width: 1020px;
+  max-width: 992px;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
 
 // главный header на странице
 header.general-header {
-  padding-top: 54px;
-  height: 700px;
+  padding: 54px 0 100px 0;
   background-color: #222222;
 
 
@@ -40,6 +39,10 @@ header.general-header {
     height: 62px;
     display: flex;
     align-items: center;
+
+    @include for-phone-only {
+      display: none;
+    }
 
 
     .general-menu__navigation {
@@ -74,98 +77,136 @@ header.general-header {
   }
 
   .header-content {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 370px minmax(100px, 438px);
     justify-content: space-between;
-  }
+    gap: 90px;
 
-  .header-content__image {
-    transition-duration: 2s;
+    @include for-tablet {
+      grid-template-columns: 1fr;
 
-    &:hover {
-      transition-duration: 2s;
-      transform: scale(0.8) rotate(360deg);
     }
 
-  }
+
+    .header-content__description {
+      //margin-top: 43px;
+      //margin-left: 126px;
+      padding: 43px 0 0 126px;
+
+      @include for-tablet {
+        padding: 43px 126px 0 126px;
+      }
+
+      h1 {
+        font-size: 45px;
+        color: white;
+      }
+
+      .header-content__caption {
+        @extend %average-text-style;
+        margin-top: 30px;
+      }
 
 
-  .header-content__description {
-    width: 254px;
-    margin-top: 43px;
-    margin-left: 126px;
+      .header-content__button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 240px;
+        height: 50px;
+        padding: 0 22px 0 38px;
+        font-family: 'Verdana';
+        margin-top: 54px;
+
+        font-size: 14px;
+
+        text-decoration: none;
+
+        color: #000;
+
+        background: #FFCB06;
+        border-radius: 25px;
+      }
 
 
-  }
+    }
 
-  .header-content__caption {
-    font-size: 14px;
-    line-height: 17px;
 
-    color: #D4D4D4;
-  }
+    .header-content__image {
+      transition-duration: 2s;
+      max-width: 100%;
 
-  .general-header {
-    font-size: 45px;
-    color: white;
-  }
+      &:hover {
+        transition-duration: 2s;
+        transform: scale(0.8) rotate(360deg);
+      }
 
-  .header-content__button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 240px;
-    height: 50px;
-    padding: 0 22px 0 38px;
-    font-family: 'Verdana';
-    margin-top: 54px;
+      @include for-tablet {
+        display: none;
 
-    font-size: 14px;
-    line-height: 17px;
-    text-decoration: none;
+      }
 
-    color: #000;
+    }
 
-    background: #FFCB06;
-    border-radius: 25px;
   }
 
 
 }
 
+
 // main
 //advantages
 section.advantages {
-  height: 321px;
   background: #131313;
-  padding-top: 85px;
+  padding: 75px 0;
 
 
   .advantages__box {
     height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  .advantages-item {
-
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 157px);
     justify-content: space-between;
 
-    width: 157px;
-    height: 157px;
 
-    .advantages-item__image {
-      width: 60px;
+    @include for-phone-only {
+      grid-template-columns: repeat(2, 157px);
+      justify-content: space-between;
+      grid-row-gap: 40px;
+
     }
 
-    .advantages-item__caption {
-      @extend %average-text-style
-    }
 
+    .advantages-item {
+
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      width: 157px;
+
+      @include for-tablet {
+        width: 45%
+      }
+
+      @include for-phone-only {
+        width: 130px;
+
+      }
+
+      .advantages-item__image {
+        width: 60px;
+      }
+
+
+      .advantages-item__caption {
+        @extend %average-text-style
+      }
+
+    }
   }
+
+
 }
 
 
@@ -177,9 +218,23 @@ section.content {
   .content__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 346px  204px;
+
     grid-column-gap: 79px;
     grid-row-gap: 52px;
+
+    @include for-phone-only {
+      grid-template-columns: 1fr;
+    }
+
+    .content__map {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right;
+      @include for-phone-only {
+        grid-row: 2/3;
+      }
+    }
 
     .content__description {
       display: flex;
@@ -194,6 +249,9 @@ section.content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 20px;
+
+
       }
 
     }
@@ -247,14 +305,23 @@ section.form {
   padding: 75px 0;
 
   .form__wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+    @include for-phone-only {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
 
     .form__description {
-      width: 318px;
+      max-width: 318px;
+      @include for-phone-only {
+        max-width: none;
+      }
 
       .form__text {
-        margin-top: 60px;
+        margin-top: 20px;
         @extend %average-text-style;
         color: #000;
       }
@@ -262,7 +329,14 @@ section.form {
     }
 
     .contact-form {
-      width: 440px;
+      max-width: 440px;
+      min-width: 25%;
+      flex-shrink: 2;
+
+      @include for-phone-only {
+        max-width: none;
+      }
+
 
       .contact-form__fields {
         border: none;
@@ -274,6 +348,7 @@ section.form {
 
 
         .contact-form__field {
+          width: 100%;
           border: none;
           outline: none;
           @extend %average-text-style;
@@ -303,8 +378,8 @@ section.form {
 
         .checkbox__input {
           content: "";
-          height: 1em;
-          width: 1em;
+          height: 1.2em;
+          width: 1.2em;
           background-image: url("../icons/checkbox/checkbox_unchecked.svg");
 
 
@@ -332,6 +407,10 @@ section.form {
         background: #222222;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
+
+        @include for-phone-only {
+          margin-top: 36px;
+        }
       }
 
 
@@ -341,9 +420,157 @@ section.form {
 
 }
 
+section.schedule {
+  padding: 75px 0;
+  background: #222;
+  color: #D4D4D4;
 
 
+  .schedule__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 80px;
 
+
+    @include for-phone-only {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+    }
+
+
+    .schedule__header {
+      color: #FECA30;
+
+    }
+
+    .schedule__text {
+      @extend %average-text-style;
+      margin-top: 40px;
+
+      .schedule__link {
+        color: #FECA30;
+      }
+
+
+    }
+
+    .schedule-table {
+      grid-column: 1/3;
+      margin-top: 78px;
+      width: 100%;
+      @extend %average-text-style;
+
+      @include for-phone-only {
+        grid-column: 1/2;
+      }
+
+
+      border-collapse: collapse;
+
+      .schedule-table__row {
+        .schedule-table__cell {
+          height: 50px;
+          width: 25%;
+          text-align: left;
+          padding-left: 17px;
+
+          font-weight: 700;
+        }
+      }
+
+      .schedule-table__row_header {
+        background: #111;
+
+      }
+
+      .schedule-table__row_regular {
+        border-bottom: 2px solid #555;
+
+      }
+
+    }
+
+
+  }
+}
+
+footer.general-footer {
+  padding: 60px 0;
+  background: #131313;
+  @extend %average-text-style;
+
+  @include for-tablet{
+    display: none;
+  }
+
+  .footer-general__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+
+    .footer-general__copyright {
+      flex: 0 1 162px;
+
+      .footer-general__logo-box {
+        width: 134px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .footer-general__logo {
+
+        }
+
+        .footer-general__caption {
+
+        }
+      }
+
+      .copyright {
+        margin-top: 110px;
+        color: #555555;
+      }
+    }
+
+    .footer-general__menu {
+      padding-top: 23px;
+      flex: 0 1 700px;
+      display: flex;
+      justify-content: space-between;
+
+      .footer-general__subheader {
+        font-family: "Verdana";
+
+        &::after {
+
+          content: "";
+          display: block;
+          height: 2px;
+          background: #555;
+          margin-top: 12px;
+        }
+      }
+
+      .footer-general__submenu {
+        margin-top: 58px;
+        width: 180px;
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+
+        .footer-general__menu-item {
+          color: #888;
+        }
+
+      }
+
+
+    }
+
+  }
+
+}
 
 
 

@@ -1,16 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!-- Адаптив раз  -->
-    <meta name="viewport" content="width=1200">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="icons/logo_1.png" type="image/x-icon">
-    <meta name="viewport">
     <title>На Луну и обратно</title>
 </head>
 <body>
@@ -61,7 +58,7 @@
 
             <div class="header-content__description">
 
-                <h1 class="general-header">На Луну <br> и обратно</h1>
+                <h1>На Луну <br> и обратно</h1>
                 <p class="header-content__caption">Космически крутой туризм.
                     Пакетные и индивидуальные туры
                     по лучшим планетам галактики.</p>
@@ -127,7 +124,7 @@
         <div class="container">
 
             <div class="content__wrapper">
-                <img class="map" src="img/map%201.jpg" alt="Карта лунной поверхности">
+                <img class="content__map" src="img/map%201.jpg" alt="Карта лунной поверхности">
 
                 <div class="content__description">
                     <h2 class="content__header">Надоело летать в отпуск за
@@ -213,16 +210,24 @@
                     </p>
 
                 </div>
+
                 <form class="contact-form" action="#" method="get">
                     <fieldset class="contact-form__fields">
+
                         <input type="text" name="fullName" placeholder="ФИО"
                                class="contact-form__field contact-form__field_long">
+
+
                         <input type="text" name="contactNumber" placeholder="Контактный телефон"
                                class="contact-form__field contact-form__field_long">
+
+
                         <input class="contact-form__field contact-form__field_short" type="number" name="height"
                                placeholder="Рост">
+
                         <input class="contact-form__field contact-form__field_short" type="number" name="weight"
                                placeholder="Вес">
+
                     </fieldset>
 
                     <label class="checkbox">
@@ -246,37 +251,38 @@
     <section class="schedule">
         <div class="container">
 
-            <div class="table-description">
-                <h2 class="schedule-header">Расписание
+            <div class="schedule__wrapper">
+                <h2 class="schedule__header">Расписание
                     полетов</h2>
-                <p class="schedule-text">
+                <p class="schedule__text">
                     Для вашего удобства мы разработали график полетов
                     с вылетами из Москвы и Санкт-Петербурга. Вы также можете
-                    запросить <a href="" class="schedule-text-link">индивидуальный полет</a>.
+                    запросить <a href="" class="schedule__link">индивидуальный полет</a>.
                 </p>
+
+
+                <table class="schedule-table">
+                    <tr class="schedule-table__row_header schedule-table__row">
+                        <th class="schedule-table__cell">№ Рейса</th>
+                        <th class="schedule-table__cell">Откуда-куда</th>
+                        <th class="schedule-table__cell">Время вылета</th>
+                        <th class="schedule-table__cell">Время прилета</th>
+                    </tr>
+                    <tr class="schedule-table__row_regular schedule-table__row">
+                        <td class="schedule-table__cell">1635</td>
+                        <td class="schedule-table__cell">VKO-MOON</td>
+                        <td class="schedule-table__cell">00:45</td>
+                        <td class="schedule-table__cell">23:15</td>
+                    </tr>
+
+                    <tr class="schedule-table__row_regular schedule-table__row">
+                        <td class="schedule-table__cell">70200</td>
+                        <td class="schedule-table__cell">LED-MOON</td>
+                        <td class="schedule-table__cell">17:30</td>
+                        <td class="schedule-table__cell">16:20</td>
+                    </tr>
+                </table>
             </div>
-
-            <table class="schedule-table">
-                <tr class="header-row">
-                    <th>№ Рейса</th>
-                    <th>Откуда-куда</th>
-                    <th>Время вылета</th>
-                    <th>Время прилета</th>
-                </tr>
-                <tr class="regular-row">
-                    <td>1635</td>
-                    <td>VKO-MOON</td>
-                    <td>00:45</td>
-                    <td>23:15</td>
-                </tr>
-
-                <tr class="regular-row">
-                    <td>70200</td>
-                    <td>LED-MOON</td>
-                    <td>17:30</td>
-                    <td>16:20</td>
-                </tr>
-            </table>
         </div>
 
     </section>
@@ -284,14 +290,15 @@
 
 </main>
 
-<footer>
+<footer class="general-footer">
     <div class="container">
 
-        <div class="footer-box">
-            <div class="left-column">
-                <div class="logo-box">
-                    <img class="logo" src="icons/logo_1.png" alt="">
-                    <p class="caption">Space-Z</p>
+        <div class="footer-general__wrapper">
+
+            <div class="footer-general__copyright">
+                <div class="footer-general__logo-box">
+                    <img class="footer-general__logo" src="icons/logo_1.png" alt="">
+                    <span class="footer-general__caption">Space-Z</span>
                 </div>
 
                 <p class="copyright">
@@ -301,37 +308,37 @@
             </div>
 
 
-            <div class="right-column">
-                <ul class="footer-menu">
-                    <li>
-                        <p class="subheader">КОМПАНИЯ</p>
-                        <ul class="footer-submenu">
-                            <li>История</li>
-                            <li>Миссия</li>
-                            <li>Команда</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <p class="subheader">КАТАЛОГ</p>
-                        <ul class="footer-submenu">
-                            <li>Полеты</li>
-                            <li>Проживание</li>
-                            <li>Экскурсии</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <p class="subheader">КОНТАКТЫ</p>
-                        <ul class="footer-submenu">
+            <ul class="footer-general__menu">
+                <li>
+                    <h3 class="footer-general__subheader">КОМПАНИЯ</h3>
+                    <ul class="footer-general__submenu">
+                        <li class="footer-general__menu-item">История</li>
+                        <li class="footer-general__menu-item">Миссия</li>
+                        <li class="footer-general__menu-item">Команда</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3 class="footer-general__subheader">КАТАЛОГ</h3>
+                    <ul class="footer-general__submenu">
+                        <li class="footer-general__menu-item">Полеты</li>
+                        <li class="footer-general__menu-item">Проживание</li>
+                        <li class="footer-general__menu-item">Экскурсии</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3 class="footer-general__subheader">КОНТАКТЫ</h3>
+                    <ul class="footer-general__submenu">
 
-                            <li>Отправить заявку</li>
-                            <li>Схема проезда</li>
-                            <li>Время работы</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                        <li class="footer-general__menu-item">Отправить заявку</li>
+                        <li class="footer-general__menu-item">Схема проезда</li>
+                        <li class="footer-general__menu-item">Время работы</li>
+                    </ul>
+                </li>
+            </ul>
+
         </div>
     </div>
+
 
 </footer>
 </body>
