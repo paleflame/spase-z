@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header class="general-header">
+<header class="general-header" style="display: none;">
     <div class="container">
         <nav class="general-menu">
 
@@ -85,36 +85,41 @@
     <section class="advantages">
         <div class="container">
 
-            <ul class="advantages__box">
+            <div class="advantages__box">
 
-                <li class="advantages-item">
-                    <img class="advantages-item__image" src="icons/advantage-icon-1%201.svg" alt="Ракета">
-                    <p class="advantages-item__caption">Комфортабельные
-                        ракеты отечественного
-                        производства.</p>
-                </li>
-                <li class="advantages-item">
-                    <img class="advantages-item__image" src="icons/advantage-icon-2%201.svg"
-                         alt="Тюбик с космической едой">
-                    <p class="advantages-item__caption">Вкусное и полезное
-                        космическое питание
-                        на борту</p>
-                </li>
-                <li class="advantages-item">
-                    <img class="advantages-item__image" src="icons/advantage-icon-3%201.svg" alt="Космонавт">
-                    <p class="advantages-item__caption">Весь состав пилотов
-                        состоит из бывших
-                        космонавтов.</p>
-                </li>
-                <li class="advantages-item">
-                    <img class="advantages-item__image" src="icons/advantage-icon-4%201.svg"
-                         alt="Лунная поверхность с развивающимся флагом">
-                    <p class="advantages-item__caption"
-                    >Экскурсии на луноходе
-                        на Море Ясности
-                        и Океан Бурь.</p>
-                </li>
-            </ul>
+                <div class="advantages__column">
+                    <div class="advantages-item">
+                        <img class="advantages-item__image" src="icons/advantage-icon-1%201.svg" alt="Ракета">
+                        <p class="advantages-item__caption">Комфорта&shy;бельные
+                            ракеты отечественного
+                            производства.</p>
+                    </div>
+                    <div class="advantages-item">
+                        <img class="advantages-item__image" src="icons/advantage-icon-2%201.svg"
+                             alt="Тюбик с космической едой">
+                        <p class="advantages-item__caption">Вкусное и полезное
+                            космическое питание
+                            на борту</p>
+                    </div>
+                </div>
+
+                <div class="advantages__column">
+                    <div class="advantages-item">
+                        <img class="advantages-item__image" src="icons/advantage-icon-3%201.svg" alt="Космонавт">
+                        <p class="advantages-item__caption">Весь состав пилотов
+                            состоит из бывших
+                            космонавтов.</p>
+                    </div>
+                    <div class="advantages-item">
+                        <img class="advantages-item__image" src="icons/advantage-icon-4%201.svg"
+                             alt="Лунная поверхность с развивающимся флагом">
+                        <p class="advantages-item__caption"
+                        >Экскурсии на луноходе
+                            на Море Ясности
+                            и Океан Бурь.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -261,27 +266,29 @@
                 </p>
 
 
-                <table class="schedule-table">
-                    <tr class="schedule-table__row_header schedule-table__row">
-                        <th class="schedule-table__cell">№ Рейса</th>
-                        <th class="schedule-table__cell">Откуда-куда</th>
-                        <th class="schedule-table__cell">Время вылета</th>
-                        <th class="schedule-table__cell">Время прилета</th>
-                    </tr>
-                    <tr class="schedule-table__row_regular schedule-table__row">
-                        <td class="schedule-table__cell">1635</td>
-                        <td class="schedule-table__cell">VKO-MOON</td>
-                        <td class="schedule-table__cell">00:45</td>
-                        <td class="schedule-table__cell">23:15</td>
-                    </tr>
+                <div class="schedule__table-wrapper">
+                    <table class="schedule-table">
+                        <tr class="schedule-table__row_header schedule-table__row">
+                            <th class="schedule-table__cell">№ Рейса</th>
+                            <th class="schedule-table__cell">Откуда-куда</th>
+                            <th class="schedule-table__cell">Время вылета</th>
+                            <th class="schedule-table__cell">Время прилета</th>
+                        </tr>
+                        <tr class="schedule-table__row_regular schedule-table__row">
+                            <td class="schedule-table__cell">1635</td>
+                            <td class="schedule-table__cell">VKO-MOON</td>
+                            <td class="schedule-table__cell">00:45</td>
+                            <td class="schedule-table__cell">23:15</td>
+                        </tr>
 
-                    <tr class="schedule-table__row_regular schedule-table__row">
-                        <td class="schedule-table__cell">70200</td>
-                        <td class="schedule-table__cell">LED-MOON</td>
-                        <td class="schedule-table__cell">17:30</td>
-                        <td class="schedule-table__cell">16:20</td>
-                    </tr>
-                </table>
+                        <tr class="schedule-table__row_regular schedule-table__row">
+                            <td class="schedule-table__cell">70200</td>
+                            <td class="schedule-table__cell">LED-MOON</td>
+                            <td class="schedule-table__cell">17:30</td>
+                            <td class="schedule-table__cell">16:20</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
 

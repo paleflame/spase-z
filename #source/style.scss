@@ -1,7 +1,7 @@
 @import "nullstyles.scss";
 @import "adaptive.scss";
 
-* {
+*, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -164,46 +164,70 @@ section.advantages {
   .advantages__box {
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 157px);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
+    column-gap: 80px;
 
+
+    @include for-tablet {
+
+    }
 
     @include for-phone-only {
-      grid-template-columns: repeat(2, 157px);
-      justify-content: space-between;
-      grid-row-gap: 40px;
-
+      grid-template-columns: 1fr;
+      row-gap: 40px;
     }
+    //@media (max-width: 420px) {
+    //  justify-content: space-between;
+    //  column-gap: 0;
+    //}
 
 
-    .advantages-item {
-
-
+    .advantages__column {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 80px;
 
-      width: 157px;
 
       @include for-tablet {
-        width: 45%
+        gap: 20px;
+        justify-content: space-between;
       }
-
       @include for-phone-only {
-        width: 130px;
-
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
       }
 
-      .advantages-item__image {
-        width: 60px;
-      }
+      .advantages-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        word-wrap: break-word;
+
+        @include for-tablet {
+          &:nth-child(2) {
+
+          }
+
+        }
 
 
-      .advantages-item__caption {
-        @extend %average-text-style
+        .advantages-item__image {
+          width: 60px;
+        }
+
+
+        .advantages-item__caption {
+          @extend %average-text-style
+        }
+
+
       }
 
     }
+
+
   }
 
 
@@ -440,41 +464,63 @@ section.schedule {
 
     .schedule__header {
       color: #FECA30;
-
     }
 
     .schedule__text {
       @extend %average-text-style;
-      margin-top: 40px;
 
       .schedule__link {
         color: #FECA30;
       }
 
+      @include for-phone-only {
+        margin-top: 40px;
+      }
+
+
+    }
+
+    .schedule__table-wrapper {
+      overflow-x: auto;
+      width: 100%;
+      grid-column: 1/3;
+      @include for-phone-only {
+        grid-column: auto;
+      }
 
     }
 
     .schedule-table {
-      grid-column: 1/3;
+
       margin-top: 78px;
       width: 100%;
+
       @extend %average-text-style;
 
       @include for-phone-only {
         grid-column: 1/2;
+
       }
 
 
       border-collapse: collapse;
 
       .schedule-table__row {
+
+        overflow-x: scroll;
+
+
         .schedule-table__cell {
           height: 50px;
           width: 25%;
           text-align: left;
           padding-left: 17px;
-
           font-weight: 700;
+
+          &:last-child {
+            padding-right: 17px;
+          }
+
         }
       }
 
@@ -499,7 +545,7 @@ footer.general-footer {
   background: #131313;
   @extend %average-text-style;
 
-  @include for-tablet{
+  @include for-tablet {
     display: none;
   }
 
@@ -514,6 +560,8 @@ footer.general-footer {
 
       .footer-general__logo-box {
         width: 134px;
+
+
         display: flex;
         justify-content: space-between;
         align-items: center;

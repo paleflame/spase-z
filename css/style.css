@@ -9,13 +9,13 @@ ol[class] {
   padding: 0;
 }
 
-* {
+*, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-footer.general-footer, section.schedule .schedule__wrapper .schedule-table, section.schedule .schedule__wrapper .schedule__text, section.form .form__wrapper .contact-form .contact-form__button, section.form .form__wrapper .contact-form .contact-form__fields .contact-form__field, section.form .form__wrapper .form__description .form__text, section.content .content__wrapper .advices .advices__item, section.content .content__wrapper .content__description .content__paragraphs, section.advantages .advantages__box .advantages-item .advantages-item__caption, header.general-header .header-content .header-content__description .header-content__caption {
+footer.general-footer, section.schedule .schedule__wrapper .schedule-table, section.schedule .schedule__wrapper .schedule__text, section.form .form__wrapper .contact-form .contact-form__button, section.form .form__wrapper .contact-form .contact-form__fields .contact-form__field, section.form .form__wrapper .form__description .form__text, section.content .content__wrapper .advices .advices__item, section.content .content__wrapper .content__description .content__paragraphs, section.advantages .advantages__box .advantages__column .advantages-item .advantages-item__caption, header.general-header .header-content .header-content__description .header-content__caption {
   font-family: "Verdana";
   font-weight: 400;
   font-size: 14px;
@@ -76,7 +76,7 @@ header.general-header .header-content {
   justify-content: space-between;
   gap: 90px;
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   header.general-header .header-content {
     grid-template-columns: 1fr;
   }
@@ -84,7 +84,7 @@ header.general-header .header-content {
 header.general-header .header-content .header-content__description {
   padding: 43px 0 0 126px;
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   header.general-header .header-content .header-content__description {
     padding: 43px 126px 0 126px;
   }
@@ -119,7 +119,7 @@ header.general-header .header-content .header-content__image:hover {
   transition-duration: 2s;
   transform: scale(0.8) rotate(360deg);
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   header.general-header .header-content .header-content__image {
     display: none;
   }
@@ -132,33 +132,41 @@ section.advantages {
 section.advantages .advantages__box {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 157px);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
+  column-gap: 80px;
 }
 @media (max-width: 599px) {
   section.advantages .advantages__box {
-    grid-template-columns: repeat(2, 157px);
-    justify-content: space-between;
-    grid-row-gap: 40px;
+    grid-template-columns: 1fr;
+    row-gap: 40px;
   }
 }
-section.advantages .advantages__box .advantages-item {
+section.advantages .advantages__box .advantages__column {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 157px;
+  justify-content: space-between;
+  gap: 80px;
 }
-@media (max-width: 900px) {
-  section.advantages .advantages__box .advantages-item {
-    width: 45%;
+@media (max-width: 800px) {
+  section.advantages .advantages__box .advantages__column {
+    gap: 20px;
+    justify-content: space-between;
   }
 }
 @media (max-width: 599px) {
-  section.advantages .advantages__box .advantages-item {
-    width: 130px;
+  section.advantages .advantages__box .advantages__column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
 }
-section.advantages .advantages__box .advantages-item .advantages-item__image {
+section.advantages .advantages__box .advantages__column .advantages-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  word-wrap: break-word;
+}
+section.advantages .advantages__box .advantages__column .advantages-item .advantages-item__image {
   width: 60px;
 }
 section.content {
@@ -341,14 +349,25 @@ section.schedule .schedule__wrapper {
 section.schedule .schedule__wrapper .schedule__header {
   color: #FECA30;
 }
-section.schedule .schedule__wrapper .schedule__text {
-  margin-top: 40px;
-}
 section.schedule .schedule__wrapper .schedule__text .schedule__link {
   color: #FECA30;
 }
-section.schedule .schedule__wrapper .schedule-table {
+@media (max-width: 599px) {
+  section.schedule .schedule__wrapper .schedule__text {
+    margin-top: 40px;
+  }
+}
+section.schedule .schedule__wrapper .schedule__table-wrapper {
+  overflow-x: auto;
+  width: 100%;
   grid-column: 1/3;
+}
+@media (max-width: 599px) {
+  section.schedule .schedule__wrapper .schedule__table-wrapper {
+    grid-column: auto;
+  }
+}
+section.schedule .schedule__wrapper .schedule-table {
   margin-top: 78px;
   width: 100%;
   border-collapse: collapse;
@@ -358,12 +377,18 @@ section.schedule .schedule__wrapper .schedule-table {
     grid-column: 1/2;
   }
 }
+section.schedule .schedule__wrapper .schedule-table .schedule-table__row {
+  overflow-x: scroll;
+}
 section.schedule .schedule__wrapper .schedule-table .schedule-table__row .schedule-table__cell {
   height: 50px;
   width: 25%;
   text-align: left;
   padding-left: 17px;
   font-weight: 700;
+}
+section.schedule .schedule__wrapper .schedule-table .schedule-table__row .schedule-table__cell:last-child {
+  padding-right: 17px;
 }
 section.schedule .schedule__wrapper .schedule-table .schedule-table__row_header {
   background: #111;
@@ -376,7 +401,7 @@ footer.general-footer {
   padding: 60px 0;
   background: #131313;
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   footer.general-footer {
     display: none;
   }
